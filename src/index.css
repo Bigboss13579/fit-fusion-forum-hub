@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -96,6 +97,18 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-fitness-light text-foreground;
+    font-family: 'Segoe UI', Arial, sans-serif;
+  }
+}
+
+@layer components {
+  .fitness-btn {
+    @apply bg-fitness-orange text-white font-semibold py-2 px-6 rounded-full 
+    hover:bg-fitness-orangeHover transition-colors duration-200;
+  }
+  
+  .fitness-card {
+    @apply bg-white rounded-xl shadow-md p-6 w-full max-w-3xl mx-auto mb-6;
   }
 }
