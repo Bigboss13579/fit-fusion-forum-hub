@@ -7,8 +7,20 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/components/ui/use-toast";
 
+// Supabase configuration - you'll need to connect your project to Supabase
+// via the Supabase integration button in the Lovable interface
+const supabaseUrl = 'https://egzgzubluhpizdpjvmre.supabase.co';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVnemd6dWJsdWhwaXpkcGp2bXJlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDY0MzYwOTYsImV4cCI6MjA2MjAxMjA5Nn0.TJfRFaOfjKwgWSAArozYZcl58qK0L8pcPia92mU7ZFs';
+
+// Import this in your actual project file
+import { createClient } from '@supabase/supabase-js';
+
+// Create a single supabase client for interacting with your database
+const supabase = createClient(supabaseUrl, supabaseKey);
+
 const RegistrationForm = () => {
   const { toast } = useToast();
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -29,27 +41,65 @@ const RegistrationForm = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would normally send data to your backend
-    console.log('Form submitted:', formData);
+    setLoading(true);
     
-    toast({
-      title: "Registration successful!",
-      description: "A nutritionist will contact you soon.",
-    });
-    
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      password: '',
-      telephone: '',
-      age: '',
-      height: '',
-      weight: '',
-      gender: '',
-    });
+    try {
+      // Log the data (for debugging)
+      console.log('Form submitted:', formData);
+      
+      // Insert the data into Supabase
+      const { data, error } = await supabase
+        .from('users')
+        .insert([
+          { 
+            name: formData.name,
+            email: formData.email,
+            password: formData.password,
+            telephone: formData.telephone || null,
+            age: parseInt(formData.age),
+            height: parseInt(formData.height),
+            weight: parseInt(formData.weight),
+            gender: formData.gender || null
+          }
+        ]);
+      
+      if (error) {
+        console.error('Supabase error:', error);
+        toast({
+          title: "Registration failed",
+          description: error.message,
+          variant: "destructive"
+        });
+      } else {
+        toast({
+          title: "Registration successful!",
+          description: "A nutritionist will contact you soon.",
+        });
+        
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          password: '',
+          telephone: '',
+          age: '',
+          height: '',
+          weight: '',
+          gender: '',
+        });
+      }
+    } catch (err) {
+      console.error('Error submitting form:', err);
+      toast({
+        title: "Registration failed",
+        description: "An unexpected error occurred. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleClear = () => {
@@ -183,14 +233,16 @@ const RegistrationForm = () => {
               type="button" 
               variant="outline" 
               onClick={handleClear}
+              disabled={loading}
             >
               Clear Form
             </Button>
             <Button 
               type="submit" 
               className="bg-fitness-orange hover:bg-fitness-orangeHover"
+              disabled={loading}
             >
-              Register
+              {loading ? "Registering..." : "Register"}
             </Button>
           </div>
         </form>
