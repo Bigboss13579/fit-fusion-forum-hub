@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -78,12 +77,6 @@ const Food = () => {
       <Navigation />
       
       <main className="flex-grow">
-        {/* Header section */}
-        <div className="bg-yellow-400 text-center py-8">
-          <h2 className="text-2xl font-bold">Food</h2>
-          <p className="mt-2">Welcome to the Food section.</p>
-        </div>
-        
         {/* Diet Guides Section */}
         <div className="container mx-auto px-4 py-8">
           <h2 className="text-2xl font-bold text-center text-yellow-600 mb-4">Diet Guides</h2>
