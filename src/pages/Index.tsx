@@ -10,7 +10,7 @@ const Index = () => {
     <div className="min-h-screen flex flex-col">
       <Navigation />
       
-      <main className="flex-grow container mx-auto px-4 py-8 max-w-4xl">
+      <main className="flex-grow px-4 py-8 max-w-4xl mx-auto">
         <div className="space-y-6">
           <ConsultCard />
           <CommunityForum />
