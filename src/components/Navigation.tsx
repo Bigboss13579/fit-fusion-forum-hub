@@ -22,23 +22,22 @@ const Navigation = () => {
       <div className="bg-fitness-orange text-white text-center py-6">
         <h1 className="text-4xl font-bold tracking-wide">Fitness Hub Community</h1>
       </div>
-      <Tabs defaultValue={currentPath} className="w-full">
-        <TabsList className="w-full flex bg-fitness-navy h-auto rounded-none">
-          {navItems.map((item) => (
-            <TabsTrigger
-              key={item.name}
-              value={item.path}
-              className={`flex-1 py-4 text-center text-white font-medium transition-colors duration-200 hover:bg-fitness-orange rounded-none
-              ${currentPath === item.path ? 'bg-fitness-orange' : 'bg-transparent'}`}
-              asChild
-            >
-              <Link to={item.path}>
+      <div className="w-full bg-fitness-navy">
+        <div className="container mx-auto">
+          <div className="flex">
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
+                to={item.path}
+                className={`flex-1 py-4 text-center text-white font-medium transition-colors duration-200 hover:bg-fitness-orange
+                ${currentPath === item.path ? 'bg-fitness-orange' : ''}`}
+              >
                 {item.name}
               </Link>
-            </TabsTrigger>
-          ))}
-        </TabsList>
-      </Tabs>
+            ))}
+          </div>
+        </div>
+      </div>
     </>
   );
 };
