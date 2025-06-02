@@ -40,7 +40,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename="/fit-fusion-forum-hub/">
         <Routes>
           <Route path="/community" element={<Community />} />
           <Route path="/register" element={<Register />} />
@@ -68,8 +68,8 @@ const App = () => (
           <Route path="/Exercise6" element={<Exercise6 />} />
           <Route path="/Exercise7" element={<Exercise7 />} />
           <Route path="/Exercise8" element={<Exercise8 />} />
-    
-          
+
+
 
           <Route path="*" element={<NotFound />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
