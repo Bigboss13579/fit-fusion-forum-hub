@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "../../../../../../oknewxx"
+		},
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../../../../WEB PROJECT II/oknewall/okfolder/fit-fusion-forum-hub-2"
+		},
+		{
+			"path": "../../../../../../WEB PROJECT II/oknewall/okfolder/fit-fusion-forum-hub-1"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "oknewxx"
+	}
+}

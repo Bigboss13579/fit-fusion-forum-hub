@@ -1,0 +1,14 @@
+
+useEffect fetch /post_data when page loaded
+|
+|
+mapped json from database to interface Post
+from              to
+PostID        ->  id
+PostTitle     ->  title
+PosterGender  ->  gender
+PosterAge     ->  age
+PostComment   ->  comment
+|
+|
+check posts.length > 0 if not null then render Card

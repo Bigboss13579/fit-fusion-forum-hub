@@ -1,0 +1,97 @@
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* Stack elements vertically */
+    padding: 0 50px;
+    margin-top: 50px;
+}
+
+
+.image-wrapper {
+    text-align: center;
+    /* Center text */
+    max-width: 600px;
+    /* Adjust width as needed */
+}
+
+img {
+    border-radius: 10px;
+    /* Optional: Rounds the corners */
+    display: block;
+    margin: 0 auto;
+}
+
+.caption {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+
+.description {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 10px;
+    text-align: center;
+    /* Center text */
+    max-width: 600px;
+    /* Adjust width to keep it balanced */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content {
+    text-align: left;
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.content h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.content p {
+    margin-bottom: 20px;
+}
+
+.content h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0 10px 0;
+}
+
+.content ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.tab {
+    background-color: #f1f1f1;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    margin: 0 2px;
+}
+
+
+.food {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 24px;
+}
+
+.food:hover {
+    background-color: rgb(255, 152, 0);
+    color: #fff;
+}
+
+.active {
+    color: #555;
+}
