@@ -80,15 +80,15 @@ const Food: React.FC = () => {
   ];
 
   const foodPages = [
-    { title: 'The Clean Eating Diet Plan Guide', image: 'https://www.eatingwell.com/thmb/Ch2LFPGHsQ5kySirTzPLNd0LfdA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/14-days-clean-eating-meal-plan-1200-lede-601736337d914519bb5bf8eb83540da1.jpg', path: '/Food1' },
-    { title: 'The IIFYM & Flexible Dieting Diet Plan Guide', image: 'https://iifym.com/wp-content/uploads/2024/06/Flexible-dieting-IIFYM.webp', path: '/Food2' },
-    { title: 'The Ketogenic & Low Carb Diet Plan Guide', image: 'https://media.post.rvohealth.io/wp-content/uploads/2020/04/low-carb-diet-meal-plan-and-menu-732x549-thumbnail.jpg', path: '/Food3' },
-    { title: 'The Intermittent Fasting Diet Plan Guide', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKXINnenCyubffcewrleHxwJ29kADm9rAX9g&s', path: '/Food4' },
-    { title: 'The Carb Cycling Diet Plan Guide', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6PoWrK8gPBiWZILpyPVx0UYKTVXF-Rky_PQ&s', path: '/Food5' },
-    { title: 'The Paleolithic (Paleo) Diet Plan Guide', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWEBi_szfJCOb20Oao2pJI4Ma4aAlPphc59w&s', path: '/Food6' },
-    { title: 'Butter bean curry', image: 'https://images.immediate.co.uk/production/volatile/sites/30/2023/12/Butter-bean-curry-cd2e061.jpg?quality=90&webp=true&resize=375,341', path: '/Food7' },
-    { title: 'Healthy chicken burritos', image: 'https://images.immediate.co.uk/production/volatile/sites/30/2024/01/Healthy-chicken-burritos-e16725f.jpg?quality=90&webp=true&resize=375,341', path: '/Food8' },
-    { title: 'Curried satay noodles', image: 'https://images.immediate.co.uk/production/volatile/sites/30/2022/11/Curried-sate-noodles-75bdc86.jpg?quality=90&webp=true&resize=375,341', path: '/Food9' }
+    { title: 'The Clean Eating Diet Plan Guide', image: 'https://www.eatingwell.com/thmb/Ch2LFPGHsQ5kySirTzPLNd0LfdA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/14-days-clean-eating-meal-plan-1200-lede-601736337d914519bb5bf8eb83540da1.jpg', link: '/Food1' },
+    { title: 'The IIFYM & Flexible Dieting Diet Plan Guide', image: 'https://iifym.com/wp-content/uploads/2024/06/Flexible-dieting-IIFYM.webp', link: '/Food2' },
+    { title: 'The Ketogenic & Low Carb Diet Plan Guide', image: 'https://media.post.rvohealth.io/wp-content/uploads/2020/04/low-carb-diet-meal-plan-and-menu-732x549-thumbnail.jpg', link: '/Food3' },
+    { title: 'The Intermittent Fasting Diet Plan Guide', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKXINnenCyubffcewrleHxwJ29kADm9rAX9g&s', link: '/Food4' },
+    { title: 'The Carb Cycling Diet Plan Guide', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6PoWrK8gPBiWZILpyPVx0UYKTVXF-Rky_PQ&s', link: '/Food5' },
+    { title: 'The Paleolithic (Paleo) Diet Plan Guide', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWEBi_szfJCOb20Oao2pJI4Ma4aAlPphc59w&s', link: '/Food6' },
+    { title: 'Butter bean curry', image: 'https://images.immediate.co.uk/production/volatile/sites/30/2023/12/Butter-bean-curry-cd2e061.jpg?quality=90&webp=true&resize=375,341', link: '/Food7' },
+    { title: 'Healthy chicken burritos', image: 'https://images.immediate.co.uk/production/volatile/sites/30/2024/01/Healthy-chicken-burritos-e16725f.jpg?quality=90&webp=true&resize=375,341', link: '/Food8' },
+    { title: 'Curried satay noodles', image: 'https://images.immediate.co.uk/production/volatile/sites/30/2022/11/Curried-sate-noodles-75bdc86.jpg?quality=90&webp=true&resize=375,341', link: '/Food9' }
   ];
 
   return (
@@ -104,7 +104,7 @@ const Food: React.FC = () => {
             {foodPages.map((item, index) => (
               <a
                 key={index}
-                href={item.path}
+                href={item.link}
                 // target="_blank"
                 rel="noopener noreferrer"
                 className="block text-center hover:shadow-lg p-4 rounded-lg border border-gray-200 transition"              >
