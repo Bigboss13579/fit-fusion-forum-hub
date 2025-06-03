@@ -2,6 +2,7 @@
 import React from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import { Link } from 'react-router-dom';
 import '../pages-2/Food1';
 import '../pages-2/Food2';
 import '../pages-2/Food2';
@@ -102,9 +103,9 @@ const Food: React.FC = () => {
           <h2 className="text-2xl font-bold text-center text-yellow-600 mb-8">Food Guides</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {foodPages.map((item, index) => (
-              <a
+              <Link
                 key={index}
-                href={item.link}
+                to={item.link}
                 // target="_blank"
                 rel="noopener noreferrer"
                 className="block text-center hover:shadow-lg p-4 rounded-lg border border-gray-200 transition"              >
@@ -114,7 +115,7 @@ const Food: React.FC = () => {
                   className="w-full h-48 object-cover rounded-md mb-4"
                 />
                 <h3 className="font-semibold text-lg text-gray-800 hover:text-yellow-600">{item.title}</h3>
-              </a>
+              </Link>
             ))}
           </div>
         </section>
