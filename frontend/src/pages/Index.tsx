@@ -17,6 +17,7 @@ const Index = () => {
         </div>
           <div className='paper'>
             <h2>Exercise Video Databse</h2>
+            <br />
             <p>The largest and most comprehensive database of free video exercise guides! Learn how to perform exercises using correct technique.</p>
           </div>
       </div>

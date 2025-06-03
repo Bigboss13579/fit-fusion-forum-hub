@@ -64,19 +64,19 @@ const parkLocations: ParkLocation[] = [
   {
     name: 'Chatuchak Park',
     imageUrl: 'https://img.wongnai.com/p/1600x0/2018/11/29/8516d398159f436bb4b4f7d37d1cc4ee.jpg',
-    locationUrl: 'https://maps.app.goo.gl/wc7pNKBnxfvwaJsF9',
+    locationUrl: 'https://maps.app.goo.gl/CCLaEBxYFmMr9XoK7',
     description: 'A popular park with well-maintained exercise areas and walking paths. Features various outdoor fitness equipment and spaces for group activities. Perfect for morning exercises and weekend workouts.'
   },
   {
     name: 'Lumphini Park',
     imageUrl: 'https://img.wongnai.com/p/1600x0/2018/11/29/bacbef3cdff24e689a8a00a96e0fae00.jpg',
-    locationUrl: 'https://maps.app.goo.gl/wc7pNKBnxfvwaJsF9',
+    locationUrl: 'https://maps.app.goo.gl/QwKuQCFHSvXMJDrG9',
     description: 'Bangkok\'s first public park, offering extensive fitness facilities including outdoor gym equipment, running tracks, and open spaces for various exercises. A favorite spot for fitness enthusiasts.'
   },
   {
     name: 'Santiphap Park',
     imageUrl: 'https://img.wongnai.com/p/1600x0/2018/11/29/e4e8c90364b6473a9823079b13d91743.jpg',
-    locationUrl: 'https://maps.app.goo.gl/wc7pNKBnxfvwaJsF9',
+    locationUrl: 'https://maps.app.goo.gl/z14ZwPiEekoiGMcp6',
     description: 'A peaceful park with modern exercise equipment and walking paths. The park provides a perfect environment for outdoor workouts with its well-maintained facilities and natural surroundings.'
   }
 ];
