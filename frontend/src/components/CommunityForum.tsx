@@ -130,7 +130,7 @@ const CommunityForum = () => {
   const handleDeletePost = async (id: number) => {
     try {
       const result = await axios.delete(`http://localhost:3000/post/${id}`);
-      if (result.status === 200) {
+      if (result.status === 200 && result.data.status === 'success') {
         toast({
           title: "Post deleted!",
           description: "Your post has been removed from the community forum.",
