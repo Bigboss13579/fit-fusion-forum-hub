@@ -127,27 +127,22 @@ const CommunityForum = () => {
     '50+': posts.filter(post => post.age >= 50).length
   };
 
-  // const handleDeletePost = async (id: number) => {
-  //   try {
-  //     const result = await axios.delete(`http://localhost:3000/post/${id}`);
-  //     if (result.status === 200 && result.data.status === 'success') {
-  //       toast({
-  //         title: "Post deleted!",
-  //         description: "Your post has been removed from the community forum.",
-  //       });
-  //       getPost(); // refresh posts
-  //     } else {
-  //       console.error(result.data);
-  //     }
-  //   } catch (error) {
-  //     console.error("error deleting post: ", error);
-  //   }
-  // };
-
-  const handleDeletePost = async (id) => {
-  console.log("Deleting post with id:", id);
-  // ...rest of code
-};
+  const handleDeletePost = async (id: number) => {
+    try {
+      const result = await axios.delete(`http://localhost:3000/post/${id}`);
+      if (result.status === 200 && result.data.status === 'success') {
+        toast({
+          title: "Post deleted!",
+          description: "Your post has been removed from the community forum.",
+        });
+        getPost(); // refresh posts
+      } else {
+        console.error(result.data);
+      }
+    } catch (error) {
+      console.error("error deleting post: ", error);
+    }
+  };
 
   return (
     <div className="space-y-6">
