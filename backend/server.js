@@ -62,7 +62,7 @@ app.post('/post', (req, res) => {
 app.delete('/post/:id', (req, res) => {
     const postId = req.params.id;
     const sql = 'DELETE FROM post WHERE PostID = ?';
-    db.query(sql, [postId], (err, result) => {
+    db.query(sql, postId, (err, result) => {
         if (err) {
             console.error('เกิดข้อผิดพลาดในการ DELETE:', err);
             return res.status(500).json({ error: 'ไม่สามารถลบข้อมูลได้' });
@@ -75,6 +75,7 @@ app.delete('/post/:id', (req, res) => {
         affectedRows: result.affectedRows});
     });
 });
+
 
 // Start server
 app.listen(port, () => {
