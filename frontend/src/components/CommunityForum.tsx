@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -128,6 +127,23 @@ const CommunityForum = () => {
     '50+': posts.filter(post => post.age >= 50).length
   };
 
+  const handleDeletePost = async (id: number) => {
+    try {
+      const result = await axios.delete(`http://localhost:3000/post/${id}`);
+      if (result.status === 200) {
+        toast({
+          title: "Post deleted!",
+          description: "Your post has been removed from the community forum.",
+        });
+        getPost(); // refresh posts
+      } else {
+        console.error(result.data);
+      }
+    } catch (error) {
+      console.error("error deleting post: ", error);
+    }
+  };
+
   return (
     <div className="space-y-6">
       <Card>
@@ -214,6 +230,12 @@ const CommunityForum = () => {
                   <p><strong>Gender: </strong>{post.gender}</p>
                   <p><strong>Age: </strong>{post.age}</p>
                   <p><strong>Content: </strong>{post.content}</p>
+                  <Button
+                    onClick={() => handleDeletePost(post.id)}
+                    className="mt-2 bg-red-500 hover:bg-red-600"
+                  >
+                    Delete Post
+                  </Button>
                 </CardContent>
               </Card>
             ))}

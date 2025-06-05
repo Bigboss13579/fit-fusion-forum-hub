@@ -59,6 +59,21 @@ app.post('/post', (req, res) => {
     });
 });
 
+app.delete('/post/:id', (req, res) => {
+    const postId = req.params.id;
+    const sql = 'DELETE FROM post WHERE id = ?';
+    db.query(sql, [postId], (err, result) => {
+        if (err) {
+            console.error('เกิดข้อผิดพลาดในการ DELETE:', err);
+            return res.status(500).json({ error: 'ไม่สามารถลบข้อมูลได้' });
+        }
+        if (result.affectedRows === 0) {
+            return res.status(404).json({ error: 'ไม่พบโพสต์ที่ต้องการลบ' });
+        }
+        res.status(200).json({ status: 'success', msg: 'ลบโพสต์สำเร็จ' });
+    });
+});
+
 // Start server
 app.listen(port, () => {
     console.log(`Server running on: http://localhost:${port}`);
