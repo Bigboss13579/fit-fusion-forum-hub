@@ -72,7 +72,7 @@ app.delete('/post/:id', (req, res) => {
         }
         res.status(200).json({ status: 'success', 
         msg: 'ลบโพสต์สำเร็จ', 
-        deleteId: postId});
+        affectedRows: result.affectedRows});
     });
 });
 
