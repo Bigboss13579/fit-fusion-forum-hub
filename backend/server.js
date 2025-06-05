@@ -70,7 +70,9 @@ app.delete('/post/:id', (req, res) => {
         if (result.affectedRows === 0) {
             return res.status(404).json({ error: 'ไม่พบโพสต์ที่ต้องการลบ' });
         }
-        res.status(200).json({ status: 'success', msg: 'ลบโพสต์สำเร็จ' });
+        res.status(200).json({ status: 'success', 
+        msg: 'ลบโพสต์สำเร็จ', 
+        deleteId: postId});
     });
 });
 
